@@ -8,7 +8,7 @@ class Update():
     def __init__(self):
         self.version = '1.1.0'
         self.github = 'https://github.com/Kaeko007/Update/blob/main/tools/update.py'
-        self.zipfile = 'https://github.com/Kaeko007/Update/blob/main/Zip/Asuna.rar'
+        self.zipfile = 'https://github.com/Kaeko007/Update/archive/refs/heads/main.zip'
         self.update_checker()
 
     def update_checker(self):
