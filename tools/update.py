@@ -6,14 +6,14 @@ from time import sleep
 
 class Update():
     def __init__(self):
-        self.version = '1.0.0'
-        self.github = 'https://raw.githubusercontent.com/Smug246/Luna-Grabber/main/tools/update.py'
-        self.zipfile = 'https://github.com/Smug246/Luna-Grabber/archive/refs/heads/main.zip'
+        self.version = '1.1.0'
+        self.github = 'https://github.com/Kaeko007/Update/blob/main/tools/update.py'
+        self.zipfile = 'https://github.com/Kaeko007/Update/blob/main/Zip/Asuna.rar'
         self.update_checker()
 
     def update_checker(self):
         code = requests.get(self.github).text
-        if "self.version = '1.0.0'" in code:
+        if "self.version = '1.1.0'" in code:
             print('This version is up to date!')
             sleep(1)
             sys.exit(0)
