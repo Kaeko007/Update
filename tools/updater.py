@@ -3,20 +3,20 @@ import shutil
 import subprocess
 from zipfile import ZipFile
 
-
 def main():
-    if not os.path.exists('Update.zip'):
-        print('Update.zip not found.')
+    if not os.path.exists('Asuna.zip'):
+        print('Asuna.zip not found.')
         return
 
-    print("Extracting Update.zip...")
+    print("Extracting Asuna.zip...")
     try:
-        with ZipFile('Update.zip', 'r') as zip_ref:
+        with ZipFile('Asuna.zip', 'r') as zip_ref:
             zip_ref.extractall()
             temp_folder = zip_ref.filelist[0].filename.removesuffix('/')
     except Exception as e:
-        print(f"Failed to extract Update.zip: {e}")
+        print(f"Failed to extract Asuna.zip: {e}")
         return
+
     print("Moving files...")
     try:
         for file in os.listdir(temp_folder):
@@ -33,14 +33,10 @@ def main():
     finally:
         print("Cleaning up...")
         shutil.rmtree(temp_folder)
-        os.remove('Update.zip')
+        os.remove('Asuna.zip')
         print("Update complete.")
         print("Restarting...")
-        subprocess.Popen("setup.bat", shell=True)
-
-
-
-
+        # subprocess.Popen("setup.bat", shell=True)
 
 if __name__ == '__main__':
     main()
